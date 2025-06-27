@@ -9,7 +9,9 @@ namespace DesignPattern
         static void Main(string[] args)
         {
             //SingleResponsibility.MainProcess();
-            OpenClosedPrinciple.MainProcess();
+            //OpenClosedPrinciple.MainProcess();
+            //LiskovSubsitution.MainProcess();
+            InterfaceSegregation.MainProcess();
         }
 
        

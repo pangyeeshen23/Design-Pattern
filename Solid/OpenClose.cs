@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Solid
 {
+    /// <summary>
+    /// Open Closed Principle (OCP) states that software entities (classes, modules, functions, etc.) 
+    /// should be open for extension but closed for modification.
+    /// meaning that the behavior of a class should be modified by adding new code, but to add new class to extend the
+    /// behavior of existing class,
+    /// </summary>
     static class OpenClose
     {
         public enum Color
