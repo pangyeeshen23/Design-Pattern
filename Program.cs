@@ -11,7 +11,8 @@ namespace DesignPattern
             //SingleResponsibility.MainProcess();
             //OpenClosedPrinciple.MainProcess();
             //LiskovSubsitution.MainProcess();
-            InterfaceSegregation.MainProcess();
+            //InterfaceSegregation.MainProcess();
+            DependencyInversion.MainProcess();
         }
 
        
