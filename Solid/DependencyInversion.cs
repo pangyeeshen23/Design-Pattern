@@ -21,56 +21,58 @@ namespace DesignPattern.Solid
 
             Research research = new Research(relastionships);
         }
-    }
 
-    public enum Relationship
-    {
-        Parent,
-        Child,
-        Sibling
-    }
-
-    public class Person
-    {
-        public string Name { get; set; }
-        public DateTime DateOfBirth;
-    }
-
-    public interface IRelationshipBrowser
-    {
-        IEnumerable<Person> FindAllChildrenOf(string name);
-    }
-
-    public class Relastionships : IRelationshipBrowser
-    {
-        private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
-
-        public void AddParentAndChild(Person parent, Person child)
+        private enum Relationship
         {
-            relations.Add((parent, Relationship.Parent, child));
-            relations.Add((child, Relationship.Child, parent));
+            Parent,
+            Child,
+            Sibling
         }
 
-        public IEnumerable<Person> FindAllChildrenOf(string name)
+        private class Person
         {
-            foreach (var r in relations.Where(x => x.Item1.Name == "John" && x.Item2 == Relationship.Parent))
+            public string Name { get; set; }
+            public DateTime DateOfBirth;
+        }
+
+        private interface IRelationshipBrowser
+        {
+            IEnumerable<Person> FindAllChildrenOf(string name);
+        }
+
+        private class Relastionships : IRelationshipBrowser
+        {
+            private List<(Person, Relationship, Person)> relations = new List<(Person, Relationship, Person)>();
+
+            public void AddParentAndChild(Person parent, Person child)
             {
-                yield return r.Item3;
+                relations.Add((parent, Relationship.Parent, child));
+                relations.Add((child, Relationship.Child, parent));
+            }
+
+            public IEnumerable<Person> FindAllChildrenOf(string name)
+            {
+                foreach (var r in relations.Where(x => x.Item1.Name == "John" && x.Item2 == Relationship.Parent))
+                {
+                    yield return r.Item3;
+                }
+            }
+
+            public List<(Person, Relationship, Person)> Relations { get { return this.relations; } }
+        }
+
+        private class Research
+        {
+            public Research(IRelationshipBrowser relationshipBrowser)
+            {
+                foreach (var p in relationshipBrowser.FindAllChildrenOf("John"))
+                {
+                    Console.WriteLine($"John has a child called {p.Name}.");
+                }
             }
         }
-
-        public List<(Person, Relationship, Person)> Relations { get { return this.relations; } }
     }
 
-    public class Research
-    {
-        public Research(IRelationshipBrowser relationshipBrowser)
-        {
-            foreach (var p in relationshipBrowser.FindAllChildrenOf("John"))
-            {
-                Console.WriteLine($"John has a child called {p.Name}.");
-            }
-        }
-    }
+    
 
 }
