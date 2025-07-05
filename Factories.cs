@@ -45,9 +45,9 @@ namespace DesignPattern
             //Point origin = Point.Origin;
 
             //Abstract Factory
-            HotDrinkMachine machine = new HotDrinkMachine();
-            IHotDrink drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 200);
-            drink.Consume();
+            //HotDrinkMachine machine = new HotDrinkMachine();
+            //IHotDrink drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 200);
+            //drink.Consume();
         }
     }
 }
