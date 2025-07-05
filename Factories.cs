@@ -1,0 +1,40 @@
+﻿
+
+using System.Threading.Tasks;
+using DesignPattern.Factory;
+
+namespace DesignPattern
+{
+    class Factories
+    {
+        public async Task MainProcess()
+        {
+            // Factory Method Pattern - When a class has class to instantiate and private initiatize constructor
+            // then it is a Factory Method Pattern.
+            //Point p1 = Point.NewCartesianPoint(10, 20);
+            //Console.WriteLine(p1.ToString());
+            //Point p2 = Point.NewPolarPoint(1.0, Math.PI / 2);
+            //Console.WriteLine(p2.ToString());
+
+            // Asynchronous Factory Method
+            //Page page = await Page.CreateAsync();
+
+            // Dedicated Factory Class with Factory Pattern
+            //Point p1 = PointFactory.NewCartesianPoint(10, 20);
+            //Point p2 = PointFactory.NewPolarPoint(10, 20);
+
+            // Object Tracking and Bulk Replacement
+            TrackingThemeFactory factory = new TrackingThemeFactory();
+            ITheme theme1 = factory.CreateTheme(false);
+            ITheme theme2 = factory.CreateTheme(true);
+            Console.WriteLine(factory.Info);
+
+            ReplaceableThemeFactory replaceThemeFactory = new ReplaceableThemeFactory();
+            Ref<ITheme> magicTheme = replaceThemeFactory.CreateTheme(true);
+            Ref<ITheme> magicTheme2 = replaceThemeFactory.CreateTheme(false);
+            Console.WriteLine(magicTheme.Value.BgrColor);
+            replaceThemeFactory.ReplaceTheme(false);
+            Console.WriteLine(magicTheme.Value.BgrColor);
+        }
+    }
+}
