@@ -33,7 +33,7 @@ namespace DesignPattern
             Ref<ITheme> magicTheme = replaceThemeFactory.CreateTheme(true);
             Ref<ITheme> magicTheme2 = replaceThemeFactory.CreateTheme(false);
             Console.WriteLine(magicTheme.Value.BgrColor);
-            replaceThemeFactory.ReplaceTheme(false);
+            replaceThemeFactory.ReplaceTheme(false); // note : to me not suitable to factory pattern. cause factory should instantiate object based on inputs only
             Console.WriteLine(magicTheme.Value.BgrColor);
         }
     }
