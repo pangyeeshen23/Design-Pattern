@@ -48,6 +48,17 @@ namespace DesignPattern
             //HotDrinkMachine machine = new HotDrinkMachine();
             //IHotDrink drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 200);
             //drink.Consume();
+
+            //Abstract Factory With Open Closed Principle By Using Assembly and Reflection
+            //HotDrinkMachine machine = new HotDrinkMachine();
+            //IHotDrink drink = machine.MakeDrink();
+            //drink.Consume();
+
+            Person.Factory personFactory = new Person.Factory();
+            Person person = personFactory.CreatePerson("John");
+            Person person2 = personFactory.CreatePerson("John");
+            Console.WriteLine(person);
+            Console.WriteLine(person2);
         }
     }
 }

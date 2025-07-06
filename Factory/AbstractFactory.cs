@@ -52,30 +52,77 @@ namespace DesignPattern.Factory
         }
     }
 
+    //public class HotDrinkMachine
+    //{
+    //public enum AvailableDrink
+    //{
+    //    Coffee,
+    //    Tea
+    //}
+
+    //public Dictionary<AvailableDrink, IHotDrinkFactory> factories = new Dictionary<AvailableDrink, IHotDrinkFactory>();
+
+    //public HotDrinkMachine()
+    //{
+    //    foreach(AvailableDrink drink in Enum.GetValues(typeof(AvailableDrink)))
+    //    {
+    //        var factory = (IHotDrinkFactory)Activator.CreateInstance(
+    //            Type.GetType("DesignPattern.Factory." + Enum.GetName(typeof(AvailableDrink), drink) + "Factory"
+    //        ));
+    //        factories.Add(drink, factory);
+    //    }
+    //}
+
+    //public IHotDrink MakeDrink(AvailableDrink drink, int amount)
+    //{
+    //    return factories[drink].Prepare(amount);
+    //}
+    //}
+
     public class HotDrinkMachine
     {
-        //public enum AvailableDrink
-        //{
-        //    Coffee,
-        //    Tea
-        //}
+        public List<Tuple<string, IHotDrinkFactory>> factories = new List<Tuple<string, IHotDrinkFactory>>();
 
-        //public Dictionary<AvailableDrink, IHotDrinkFactory> factories = new Dictionary<AvailableDrink, IHotDrinkFactory>();
+        public HotDrinkMachine()
+        {
+            foreach (Type type in typeof(HotDrinkMachine).Assembly.GetTypes())
+            {
+                // Get from assembly. But better ot use DI in normal setup
+                if(typeof(IHotDrinkFactory).IsAssignableFrom(type) && !type.IsInterface)
+                {
+                    factories.Add(
+                        Tuple.Create(
+                            type.Name.Replace("Factory", string.Empty),
+                            (IHotDrinkFactory) Activator.CreateInstance(type)
+                        )
+                    );
+                }
+            }
+        }
 
-        //public HotDrinkMachine()
-        //{
-        //    foreach(AvailableDrink drink in Enum.GetValues(typeof(AvailableDrink)))
-        //    {
-        //        var factory = (IHotDrinkFactory)Activator.CreateInstance(
-        //            Type.GetType("DesignPattern.Factory." + Enum.GetName(typeof(AvailableDrink), drink) + "Factory"
-        //        ));
-        //        factories.Add(drink, factory);
-        //    }
-        //}
+        public IHotDrink MakeDrink()
+        {
+            Console.WriteLine("Availabel Drinks:");
+            Console.WriteLine("Select drink by giving index: ");
+            for (int index = 0; index < factories.Count; index++ )
+            {
+                var tuple = factories[index];
+                Console.WriteLine($"{index}: {tuple.Item1}");
+            }
 
-        //public IHotDrink MakeDrink(AvailableDrink drink, int amount)
-        //{
-        //    return factories[drink].Prepare(amount);
-        //}
+            while (true)
+            {
+                string s = Console.ReadLine();
+                if (s != null && int.TryParse(s, out int i) && i >= 0 && i < factories.Count)
+                {
+                    return factories[i].Item2.Prepare(200); // default amount
+                }
+                else
+                {
+                    Console.WriteLine("Please select a valid index.");
+                }
+            }
+        }
     }
+
 }
