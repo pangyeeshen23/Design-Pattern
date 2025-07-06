@@ -1,22 +1,29 @@
-﻿namespace DesignPattern
+﻿using DesignPattern.Solid;
+
+namespace DesignPattern
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            // SOLID Principles
+            //SOLID Principles
             //SingleResponsibility.MainProcess();
             //OpenClosedPrinciple.MainProcess();
             //LiskovSubsitution.MainProcess();
             //InterfaceSegregation.MainProcess();
             //DependencyInversion.MainProcess();
 
-            // Everything related to Builder Pattern
+            //Builder Pattern
             //Builders builder = new Builders();
-            //builder.MainProcess();
+            //builder.Run();
 
-            Factories factory = new Factories();
-            factory.MainProcess();
+            //Factory Pattern
+            //Factories factory = new Factories();
+            //factory.Run();
+
+            //Prototype Pattern
+            Prototypes prototypes = new Prototypes();
+            prototypes.Run();
         }
     }
 }

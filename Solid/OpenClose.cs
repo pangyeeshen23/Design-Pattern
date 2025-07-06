@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DesignPattern.Solid.OpenClose;
 
 namespace DesignPattern.Solid
 {
@@ -121,38 +122,38 @@ namespace DesignPattern.Solid
                 }
             }
         }
+    }
 
-        public static class OpenClosedPrinciple
+    public static class OpenClosedPrinciple
+    {
+        public static void MainProcess()
         {
-            public static void MainProcess()
+            var apple = new Product("Apple", Color.Green, Size.Small);
+            var tree = new Product("Tree", Color.Green, Size.Large);
+            var house = new Product("House", Color.Blue, Size.Large);
+            Product[] products = { apple, tree, house };
+
+            var pf = new ProductFilter();
+            Console.WriteLine("Green Product (old):");
+            foreach (var p in pf.FilterByColor(products, Color.Green))
             {
-                var apple = new Product("Apple", Color.Green, Size.Small);
-                var tree = new Product("Tree", Color.Green, Size.Large);
-                var house = new Product("House", Color.Blue, Size.Large);
-                Product[] products = { apple, tree, house };
+                Console.WriteLine($" - {p.Name} is {p.Color}");
+            }
 
-                var pf = new ProductFilter();
-                Console.WriteLine("Green Product (old):");
-                foreach (var p in pf.FilterByColor(products, Color.Green))
-                {
-                    Console.WriteLine($" - {p.Name} is {p.Color}");
-                }
+            var bf = new BetterFilter();
+            Console.WriteLine("Green products (new): ");
+            foreach (var p in bf.Filter(products, new ColorSepcification(Color.Green)))
+            {
+                Console.WriteLine($" - {p.Name} is {p.Color}");
+            }
 
-                var bf = new BetterFilter();
-                Console.WriteLine("Green products (new): ");
-                foreach (var p in bf.Filter(products, new ColorSepcification(Color.Green)))
-                {
-                    Console.WriteLine($" - {p.Name} is {p.Color}");
-                }
-
-                Console.WriteLine("Blue products (new): ");
-                foreach (var p in bf.Filter(products, new AndSpecification<Product>(
-                    new ColorSepcification(Color.Blue), new SizeSpecification(Size.Large)
-                )
-                ))
-                {
-                    Console.WriteLine($" - {p.Name} is blue and large ");
-                }
+            Console.WriteLine("Blue products (new): ");
+            foreach (var p in bf.Filter(products, new AndSpecification<Product>(
+                new ColorSepcification(Color.Blue), new SizeSpecification(Size.Large)
+            )
+            ))
+            {
+                Console.WriteLine($" - {p.Name} is blue and large ");
             }
         }
     }

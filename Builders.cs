@@ -9,7 +9,7 @@ namespace DesignPattern
 {
     class Builders
     {
-        public void MainProcess()
+        public void Run()
         {
             //Builder
             //HtmlBuilder builder = new HtmlBuilder("ul");

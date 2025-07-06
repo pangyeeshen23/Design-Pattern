@@ -1,8 +1,6 @@
 ﻿
 
-using System.Threading.Tasks;
-using DesignPattern.Factory;
-using static DesignPattern.Factory.Point;
+using Coding.Exercise;
 
 namespace DesignPattern
 {
