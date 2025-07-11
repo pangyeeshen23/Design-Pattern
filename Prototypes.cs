@@ -6,8 +6,11 @@ namespace DesignPattern
     {
         public void Run()
         {
-            Person person = new Person(new[] {"John", "Smith"}, new Address("London Road", 123));
-            Console.WriteLine(person);
+            PersonPrototype.Person john = new PersonPrototype.Person(new[] {"John", "Smith"}, new PersonPrototype.Address("London Road", 123));
+            PersonPrototype.Person jane = john.DeepCopy();
+            jane.Address.HouseNumber = 321;
+            Console.WriteLine(john);
+            Console.WriteLine(jane);
         }
     }
 }
