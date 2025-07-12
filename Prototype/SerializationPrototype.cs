@@ -10,17 +10,24 @@ namespace DesignPattern.Prototype
             return JsonSerializer.Deserialize<T>(serialized);
         }
     }
+
     public class SerializationPrototype
     {
 
         public class Person
         {
-            public string[] Name { get; set; }
+            public string[] Names { get; set; }
             public Address Address { get; set; }
+
+            public Person(string[] names, Address address)
+            {
+                Names = names;
+                Address = address;
+            }
 
             public override string ToString()
             {
-                return $"Name: {string.Join(" ", Name)}, Address : {Address.ToString()}";
+                return $"Name: {string.Join(" ", Names)}, Address : {Address.ToString()}";
             }
         }
 

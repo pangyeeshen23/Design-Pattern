@@ -1,4 +1,5 @@
-﻿using DesignPattern.Prototype;
+﻿using System.Xml.Linq;
+using DesignPattern.Prototype;
 
 namespace DesignPattern
 {
@@ -36,15 +37,14 @@ namespace DesignPattern
 
 
             // Create Prototype By Serialization
-            SerializationPrototype.Person person = new SerializationPrototype.Person
-            {
-                Name = new[] { "John", "Smith" },
-                Address = new SerializationPrototype.Address
+            SerializationPrototype.Person person = new SerializationPrototype.Person(
+                new[] { "John", "Smith" },
+                new SerializationPrototype.Address
                 {
                     StreetName = "London Road",
                     HouseNumber = 123
                 }
-            };
+            );
             SerializationPrototype.Person personCopy = person.DeepCopy();
             personCopy.Address.HouseNumber = 321;
             Console.WriteLine(person);
