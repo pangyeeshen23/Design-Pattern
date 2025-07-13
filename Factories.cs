@@ -42,7 +42,7 @@ namespace DesignPattern
             //Console.WriteLine(p2);
             //Point origin = Point.Origin;
 
-            //Abstract Factory
+            //Abstract Factory - That used Enum
             //HotDrinkMachine machine = new HotDrinkMachine();
             //IHotDrink drink = machine.MakeDrink(HotDrinkMachine.AvailableDrink.Tea, 200);
             //drink.Consume();

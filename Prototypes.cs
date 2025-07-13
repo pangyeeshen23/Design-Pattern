@@ -14,7 +14,7 @@ namespace DesignPattern
             //Console.WriteLine(jane);
 
             //RecursivePrototype.Employee john = new RecursivePrototype.Employee(
-            //    new[] { "John", "Smith" }, 
+            //    new[] { "John", "Smith" },
             //    new RecursivePrototype.Address("London Road", 123),
             //    321000
             //);
@@ -37,18 +37,18 @@ namespace DesignPattern
 
 
             // Create Prototype By Serialization
-            SerializationPrototype.Person person = new SerializationPrototype.Person(
-                new[] { "John", "Smith" },
-                new SerializationPrototype.Address
-                {
-                    StreetName = "London Road",
-                    HouseNumber = 123
-                }
-            );
-            SerializationPrototype.Person personCopy = person.DeepCopy();
-            personCopy.Address.HouseNumber = 321;
-            Console.WriteLine(person);
-            Console.WriteLine(personCopy);
+            //SerializationPrototype.Person person = new SerializationPrototype.Person(
+            //    new[] { "John", "Smith" },
+            //    new SerializationPrototype.Address
+            //    {
+            //        StreetName = "London Road",
+            //        HouseNumber = 123
+            //    }
+            //);
+            //SerializationPrototype.Person personCopy = person.DeepCopy();
+            //personCopy.Address.HouseNumber = 321;
+            //Console.WriteLine(person);
+            //Console.WriteLine(personCopy);
         }
     }
 }

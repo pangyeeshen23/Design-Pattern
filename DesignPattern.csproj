@@ -7,4 +7,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Tests\**" />
+    <Compile Remove="Test\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <EmbeddedResource Remove="Test\**" />
+    <None Remove="Tests\**" />
+    <None Remove="Test\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="morelinq" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Singleton\capitals.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

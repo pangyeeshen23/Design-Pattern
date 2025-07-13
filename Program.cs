@@ -22,8 +22,12 @@ namespace DesignPattern
             //factory.Run();
 
             //Prototype Pattern
-            Prototypes prototypes = new Prototypes();
-            prototypes.Run();
+            //Prototypes prototypes = new Prototypes();
+            //prototypes.Run();
+
+            //Singleton Pattern
+            Singletons singletons = new Singletons();
+            singletons.Run();
         }
     }
 }
