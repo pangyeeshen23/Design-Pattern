@@ -10,12 +10,43 @@ namespace DesignPattern
             //int population = db.GetPopulation("Tokyo");
             //Console.WriteLine(population);
 
-            CEO ceo = new CEO();
-            ceo.Name = "Adam Smith";
-            ceo.Age = 50;
+            //CEO ceo = new CEO();
+            //ceo.Name = "Adam Smith";
+            //ceo.Age = 50;
 
-            CEO ceo2 = new CEO();
-            Console.WriteLine(ceo2);
+            //CEO ceo2 = new CEO();
+            //Console.WriteLine(ceo2);
+
+            //Task t1 = Task.Factory.StartNew(() =>
+            //{
+            //    Console.WriteLine("t1: " + PerThreadSingleton.Instance.Id);
+            //    Console.WriteLine("t1: " + PerThreadSingleton.Instance.Id);
+            //});
+
+            //Task t2 = Task.Factory.StartNew(() =>
+            //{
+            //    Console.WriteLine("t2: " + PerThreadSingleton.Instance.Id);
+            //    Console.WriteLine("t2: " + PerThreadSingleton.Instance.Id);
+            //});
+            //Task.WaitAll(t1, t2);
+
+            Building building = new Building();
+            // gnd 3000
+            using (new BuildingContext(3000))
+            {
+                building.Walls.Add(new Wall(new Point(0, 0), new Point(5000, 0)));
+                building.Walls.Add(new Wall(new Point(0, 0), new Point(0, 4000)));
+                building.Walls.Add(new Wall(new Point(5000, 0), new Point(5000, 4000)));
+            }
+
+            // 1st 3500
+            using (new BuildingContext(3500))
+            {
+                building.Walls.Add(new Wall(new Point(0, 0), new Point(6000, 0)));
+                building.Walls.Add(new Wall(new Point(0, 0), new Point(0, 4000)));
+            }
+
+            Console.WriteLine(building);
         }
     }
 
