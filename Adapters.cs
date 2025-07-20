@@ -11,7 +11,7 @@ namespace DesignPattern
     {
         public void Run()
         {
-            Canvas.Generate();
+            Adapter.Adapter.Generate();
         }
     }
 }

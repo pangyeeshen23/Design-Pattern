@@ -137,7 +137,7 @@ namespace DesignPattern.Adapter
     }
 
 
-    public class Canvas
+    public class Adapter
     {
         private static readonly List<VectorObject> vectorObjects 
             = new List<VectorObject>()
