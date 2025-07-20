@@ -1,5 +1,7 @@
 ﻿namespace DesignPattern.Adapter
 {
+
+    // recursive generic type
     public class Vector<TSelf, T, TDimension> 
         where TDimension : IInteger, new()
         where TSelf : Vector<TSelf, T, TDimension>, new()
