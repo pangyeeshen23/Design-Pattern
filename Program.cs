@@ -26,8 +26,12 @@ namespace DesignPattern
             //prototypes.Run();
 
             //Singleton Pattern
-            Singletons singletons = new Singletons();
-            singletons.Run();
+            //Singletons singletons = new Singletons();
+            //singletons.Run();
+
+            //Adapter Pattern
+            Adapters adapters = new Adapters();
+            adapters.Run();
         }
     }
 }
