@@ -137,7 +137,7 @@ namespace DesignPattern.Adapter
     }
 
 
-    public class Adapter
+    public class StandardAdapter
     {
         private static readonly List<VectorObject> vectorObjects 
             = new List<VectorObject>()
