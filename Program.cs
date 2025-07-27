@@ -1,4 +1,5 @@
 ﻿using DesignPattern.Bridge;
+using DesignPattern.Composite;
 using DesignPattern.Solid;
 
 namespace DesignPattern
@@ -35,8 +36,11 @@ namespace DesignPattern
             //adapters.Run();
 
             //Bridge Pattern
-            Bridges bridges = new Bridges();
-            bridges.Run();
+            //Bridges bridges = new Bridges();
+            //bridges.Run();
+
+            Composites composites = new Composites();
+            composites.Run();
         }
     }
 }
