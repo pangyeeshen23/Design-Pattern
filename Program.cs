@@ -1,4 +1,5 @@
-﻿using DesignPattern.Solid;
+﻿using DesignPattern.Bridge;
+using DesignPattern.Solid;
 
 namespace DesignPattern
 {
@@ -30,8 +31,12 @@ namespace DesignPattern
             //singletons.Run();
 
             //Adapter Pattern
-            Adapters adapters = new Adapters();
-            adapters.Run();
+            //Adapters adapters = new Adapters();
+            //adapters.Run();
+
+            //Bridge Pattern
+            Bridges bridges = new Bridges();
+            bridges.Run();
         }
     }
 }
