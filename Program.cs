@@ -39,8 +39,13 @@ namespace DesignPattern
             //Bridges bridges = new Bridges();
             //bridges.Run();
 
-            Composites composites = new Composites();
-            composites.Run();
+            //Composition Pattern
+            //Composites composites = new Composites();
+            //composites.Run();
+
+            //Decorator Pattern
+            Decorators decorators = new Decorators();
+            decorators.Run();
         }
     }
 }
