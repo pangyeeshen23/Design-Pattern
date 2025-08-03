@@ -20,10 +20,16 @@ namespace DesignPattern
             //AdapterDecorator adapterDecorator = new AdapterDecorator();
             //adapterDecorator.Run();
 
-            Dragon dragon = new Dragon();
-            dragon.Fly();
-            dragon.Crawl();
-            ((IWeight)dragon).GetWeight();
+            //Dragon dragon = new Dragon();
+            //dragon.Fly();
+            //dragon.Crawl();
+            //((IWeight)dragon).GetWeight();
+
+
+            DragonTwo dragonTwo = new DragonTwo();
+            dragonTwo.Age = 5;
+            ((IBird)dragonTwo).Fly();
+            ((ILizard)dragonTwo).Crawl();
         }
     }
 }
