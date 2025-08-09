@@ -26,10 +26,16 @@ namespace DesignPattern
             //((IWeight)dragon).GetWeight();
 
 
-            DragonTwo dragonTwo = new DragonTwo();
-            dragonTwo.Age = 5;
-            ((IBird)dragonTwo).Fly();
-            ((ILizard)dragonTwo).Crawl();
+            //DragonTwo dragonTwo = new DragonTwo();
+            //dragonTwo.Age = 5;
+            //((IBird)dragonTwo).Fly();
+            //((ILizard)dragonTwo).Crawl();
+
+            //DynamicDecorator dynamicDecorator = new DynamicDecorator();
+            //dynamicDecorator.RunProcess();
+
+            DynamicDecoratorPolicy dynamicDecoratorPolicy = new DynamicDecoratorPolicy();
+            dynamicDecoratorPolicy.RunProcess();
         }
     }
 }
