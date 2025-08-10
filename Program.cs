@@ -45,12 +45,9 @@ namespace DesignPattern
             //composites.Run();
 
             //Decorator Pattern
-            //Decorators decorators = new Decorators();
-            //decorators.Run();
+            Decorators decorators = new Decorators();
+            decorators.Run();
 
-            //Generic Decorator Pattern
-            GenericDecorator genericDecorator = new GenericDecorator();
-            genericDecorator.Run();
         }
     }
 }

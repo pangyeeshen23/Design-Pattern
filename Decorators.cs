@@ -34,8 +34,15 @@ namespace DesignPattern
             //DynamicDecorator dynamicDecorator = new DynamicDecorator();
             //dynamicDecorator.RunProcess();
 
-            DynamicDecoratorPolicy dynamicDecoratorPolicy = new DynamicDecoratorPolicy();
-            dynamicDecoratorPolicy.RunProcess();
+            //Decorator Pattern
+            //GenericDecorator genericDecorator = new GenericDecorator();
+            //genericDecorator.Run();
+
+            //DIDecorator DIDecorator = new DIDecorator();
+            //DIDecorator.Run();
+
+            DecoratorExersice exersice = new DecoratorExersice();
+            exersice.Run();
         }
     }
 }
