@@ -2,6 +2,7 @@
 using DesignPattern.Composite;
 using DesignPattern.Decorator;
 using DesignPattern.Solid;
+using static DesignPattern.Farcade.Excersice;
 
 namespace DesignPattern
 {
@@ -45,8 +46,12 @@ namespace DesignPattern
             //composites.Run();
 
             //Decorator Pattern
-            Decorators decorators = new Decorators();
-            decorators.Run();
+            //Decorators decorators = new Decorators();
+            //decorators.Run();
+
+            //Farcade Pattern
+            MagicSquareGenerator magicSquare = new MagicSquareGenerator();
+            magicSquare.Generate(3);
 
         }
     }
