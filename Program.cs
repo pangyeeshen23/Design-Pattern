@@ -1,10 +1,4 @@
-﻿using DesignPattern.Bridge;
-using DesignPattern.Composite;
-using DesignPattern.Decorator;
-using DesignPattern.Solid;
-using static DesignPattern.Farcade.Excersice;
-
-namespace DesignPattern
+﻿namespace DesignPattern
 {
     internal class Program
     {
@@ -50,9 +44,11 @@ namespace DesignPattern
             //decorators.Run();
 
             //Farcade Pattern
-            MagicSquareGenerator magicSquare = new MagicSquareGenerator();
-            magicSquare.Generate(3);
+            //Farcades farcade = new Farcades();
+            //farcade.Run();
 
+            FlyWeights flyWeight = new FlyWeights();
+            flyWeight.Run();
         }
     }
 }

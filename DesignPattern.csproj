@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.3.0" />
+    <PackageReference Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
     <PackageReference Include="morelinq" Version="4.4.0" />
   </ItemGroup>
 
@@ -28,6 +29,10 @@
     <None Update="Singleton\capitals.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Proxy\" />
   </ItemGroup>
 
 </Project>
