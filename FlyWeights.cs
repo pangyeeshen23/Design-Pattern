@@ -11,8 +11,15 @@ namespace DesignPattern
     {
         public void Run()
         {
-           DefaultFW defaultFW = new DefaultFW();
-           defaultFW.Run();
+            //DefaultFW defaultFW = new DefaultFW();
+            //defaultFW.Run();
+
+            //TextFormatFW textFormatFW = new TextFormatFW();
+            //textFormatFW.Run();
+
+            Sentence sentence = new Sentence("hello world");
+            sentence[1].Capitalize = true;
+            Console.WriteLine(sentence);
         }
     }
 }
