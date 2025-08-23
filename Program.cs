@@ -1,4 +1,6 @@
-﻿namespace DesignPattern
+﻿using DesignPattern.Proxy;
+
+namespace DesignPattern
 {
     internal class Program
     {
@@ -47,8 +49,13 @@
             //Farcades farcade = new Farcades();
             //farcade.Run();
 
-            FlyWeights flyWeight = new FlyWeights();
-            flyWeight.Run();
+            //FlyWeights flyWeight = new FlyWeights();
+            //flyWeight.Run();
+
+            //Proxy Pattern
+            Proxies proxies = new Proxies();
+            proxies.Run();
+            
         }
     }
 }
