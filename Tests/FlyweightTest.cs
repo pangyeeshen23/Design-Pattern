@@ -65,7 +65,7 @@ namespace Tests
             });
         }
 
-        private class MemorySnapshot
+        public class MemorySnapshot
         {
             public long ManagedBytes { get; }
             public long PrivateBytes { get; }
@@ -82,7 +82,7 @@ namespace Tests
         }
 
 
-        private static class MemoryChecker
+        public static class MemoryChecker
         {
             public static void Check(Action<MemorySnapshot> action)
             {
@@ -91,7 +91,7 @@ namespace Tests
             }
         }
 
-        private void ForceGC()
+        public void ForceGC()
         {
             GC.Collect();
             GC.WaitForPendingFinalizers();

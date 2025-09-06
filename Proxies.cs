@@ -17,8 +17,23 @@ namespace DesignPattern
             //PropertyProxy propertyProxy = new PropertyProxy();
             //propertyProxy.Run();
 
-            ValueProxy valueProxy = new ValueProxy();
-            valueProxy.Run();
+            //ValueProxy valueProxy = new ValueProxy();
+            //valueProxy.Run();
+
+            //CompositeProxy compositeProxy = new CompositeProxy();
+            //compositeProxy.Run();
+
+            //CompositeProxyArray compositeProxyArray = new CompositeProxyArray();
+            //compositeProxyArray.Run();
+
+            //CompositeProxyArray compositeProxyArray = new CompositeProxyArray();
+            //compositeProxyArray.Run();
+
+            //DynamicProxy dynamicProxy = new DynamicProxy();
+            //dynamicProxy.Run();
+
+            BitFragging bitFragging = new BitFragging();
+            bitFragging.Run();
         }
     }
 }
