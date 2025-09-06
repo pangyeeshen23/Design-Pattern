@@ -88,7 +88,7 @@ namespace DesignPattern.Proxy
                     if (group.Contains(ops[idx]))
                     {
                         var op = ops[idx];
-                        var result = op.Call(numbers[idx], numbers[idx + 1]);
+                        double result = op.Call(numbers[idx], numbers[idx + 1]);
 
                         if (result != (int)result)
                             return int.MinValue;
