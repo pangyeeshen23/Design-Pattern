@@ -111,7 +111,7 @@ namespace DesignPattern.Proxy
 
             for(; i < ops.Count; i++)
             {
-                sb.Append(numbers[1]);
+                sb.Append(numbers[i]);
                 sb.Append(ops[i].Name());
             }
 
