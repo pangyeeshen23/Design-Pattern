@@ -53,9 +53,13 @@ namespace DesignPattern
             //flyWeight.Run();
 
             //Proxy Pattern
-            Proxies proxies = new Proxies();
-            proxies.Run();
-            
+            //Proxies proxies = new Proxies();
+            //proxies.Run();
+
+            //Chain of Responsibility Pattern
+            ChainOfResponsibility chain = new ChainOfResponsibility();
+            chain.Run();
+
         }
     }
 }
