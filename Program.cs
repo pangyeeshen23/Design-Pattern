@@ -1,4 +1,5 @@
-﻿using DesignPattern.Proxy;
+﻿using DesignPattern.Command;
+using DesignPattern.Proxy;
 
 namespace DesignPattern
 {
@@ -57,9 +58,11 @@ namespace DesignPattern
             //proxies.Run();
 
             //Chain of Responsibility Pattern
-            ChainOfResponsibility chain = new ChainOfResponsibility();
-            chain.Run();
+            //ChainOfResponsibility chain = new ChainOfResponsibility();
+            //chain.Run();
 
+            Commands command = new Commands();
+            command.Run();
         }
     }
 }
