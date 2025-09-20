@@ -37,7 +37,22 @@ namespace DesignPattern.Interpreter
 
         public int Value
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                switch(MyType)
+                {
+                    case Type.Addition:
+                        return Left.Value + Right.Value;
+                    case Type.Subtraction:
+                        return Left.Value - Right.Value;
+                    case Type.Multiplication:
+                        return Left.Value * Right.Value;
+                    case Type.Division:
+                        return Left.Value / Right.Value;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
         }
 
     }
