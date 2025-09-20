@@ -6,6 +6,42 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Interpreter
 {
+
+    public interface IElement
+    {
+        public int Value { get; }
+    }
+
+    // 14
+    public class Integer : IElement
+    {
+        public Integer(int value)
+        {
+            Value = value;
+        }
+
+        public int Value { get; }
+    }
+
+    public class BinaryOperation : IElement
+    {
+
+        public enum Type
+        {
+            Addition, Subtraction, Multiplication, Division
+        }
+
+        public Type MyType;
+
+        public IElement Left, Right;
+
+        public int Value
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+    }
+
     public class Token
     {
         public enum Type
