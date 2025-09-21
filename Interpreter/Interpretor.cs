@@ -191,6 +191,7 @@ namespace DesignPattern.Interpreter
             Console.WriteLine(string.Join("\t", tokens));
 
             IElement elems = Parse(tokens);
+            Console.WriteLine($"{input} = {elems.Value}");
         }
     }
 }
