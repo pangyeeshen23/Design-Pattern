@@ -129,11 +129,68 @@ namespace DesignPattern.Interpreter
             return sb.ToString();
         }
 
+        public IElement Parse(IReadOnlyList<Token> tokens)
+        {
+            BinaryOperation result = new BinaryOperation();
+            bool haveLHS = false;
+            for(int i = 0; i < tokens.Count; i++)
+            {
+                Token token = tokens[i];
+                switch (token.MyType)
+                {
+                    case Token.Type.Integer:
+                        Integer integer = new Integer(int.Parse(token.Text));
+                        setElement(ref result, integer, ref haveLHS);
+                        break;
+                    case Token.Type.Plus:
+                        result.MyType = BinaryOperation.Type.Addition;
+                        break;
+                    case Token.Type.Minus:
+                        result.MyType = BinaryOperation.Type.Subtraction;
+                        break;
+                    case Token.Type.LParen:
+                        List<Token> subExpression = ExtractSubExpression(ref i, tokens);
+                        var element = Parse(subExpression);
+                        setElement(ref result, element, ref haveLHS);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+            return result;
+        }
+
+        public List<Token> ExtractSubExpression(ref int startPositision, IReadOnlyList<Token> tokens)
+        {
+            int endPosition = startPositision;
+            for (; endPosition < tokens.Count; ++endPosition)
+                if (tokens[endPosition].MyType == Token.Type.RParen)
+                    break;
+            List<Token> subExpression = tokens.Skip(startPositision + 1).Take(endPosition - startPositision - 1).ToList();
+            startPositision = endPosition; // because we had extract the sub expression here. we would skip the entire sub expression for the next loop
+            return subExpression;
+        }
+
+        public void setElement(ref BinaryOperation result, IElement element, ref bool haveLHS)
+        {
+            if (!haveLHS)
+            {
+                result.Left = element;
+                haveLHS = true;
+            }
+            else
+            {
+                result.Right = element;
+            }
+        }
+
         public void Run()
         {
             string input = "(13+4)-(12+1)";
             List<Token> tokens = Lex(input);
             Console.WriteLine(string.Join("\t", tokens));
+
+            IElement elems = Parse(tokens);
         }
     }
 }
