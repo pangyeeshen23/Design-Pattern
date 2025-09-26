@@ -65,8 +65,11 @@ namespace DesignPattern
             //Commands command = new Commands();
             //command.Run();
 
-            Interpretors interpreters = new Interpretors();
-            interpreters.Run();
+            //Interpretors interpreters = new Interpretors();
+            //interpreters.Run();
+
+            Iterators iterators = new Iterators();
+            iterators.Run();
         }
     }
 }
