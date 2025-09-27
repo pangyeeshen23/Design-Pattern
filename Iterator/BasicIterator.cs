@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MoreLinq.Extensions;
 
 namespace DesignPattern.Iterator
 {
@@ -28,10 +29,12 @@ namespace DesignPattern.Iterator
         }
     }
 
+
+    // this is c++ way of implementing an iterator pattern
     public class InOrderIterator<T>
     {
         private readonly Node<T> root;
-        public Node<T> Current;
+        public Node<T> Current { get; set; }
         private bool yieldedStart;
         public InOrderIterator(Node<T> root)
         {
@@ -70,7 +73,23 @@ namespace DesignPattern.Iterator
 
         public void Reset()
         {
+            Current = root;
+            yieldedStart = false;
+        }
+    }
 
+    public class BinaryTree<T>
+    {
+        private Node<T> root;
+
+        public BinaryTree(Node<T> root)
+        {
+            this.root = root;
+        }
+
+        public InOrderIterator<T> GetEnumerator()
+        {
+            return new InOrderIterator<T>(root);
         }
     }
 
@@ -78,14 +97,22 @@ namespace DesignPattern.Iterator
     {
         public void Run()
         {
-            var root = new Node<int>(1, 
-                new Node<int>(2, new Node<int>(4), new Node<int>(5)), 
+            var root = new Node<int>(1,
+                new Node<int>(2, new Node<int>(4), new Node<int>(5)),
                 new Node<int>(3, new Node<int>(6), new Node<int>(7)));
-            var it = new InOrderIterator<int>(root);
-            while (it.MoveNext())
+            //var it = new InOrderIterator<int>(root);
+            //while (it.MoveNext())
+            //{
+            //    Console.Write(it.Current.Value);
+            //    Console.Write(",");
+            //}
+
+            var tree = new BinaryTree<int>(root);
+            //Console.WriteLine(string.Join(",", tree.InOrder.Select(x => x.Value)));
+
+            foreach (var v in tree)
             {
-                Console.Write(it.Current.Value);
-                Console.Write(",");
+                Console.WriteLine(v.Value);
             }
         }
     }

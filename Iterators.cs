@@ -11,8 +11,14 @@ namespace DesignPattern
     {
         public void Run()
         {
-            BasicIterator basicIterator = new BasicIterator();
-            basicIterator.Run();
+            //BasicIterator basicIterator = new BasicIterator();
+            //basicIterator.Run();
+
+            //ArrayBackProperty arrayBackProperty = new ArrayBackProperty();
+            //arrayBackProperty.ShowStats();
+
+            Excersize excersize = new Excersize();
+            excersize.Run();
         }
     }
 }
