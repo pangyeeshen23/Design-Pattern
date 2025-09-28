@@ -68,8 +68,11 @@ namespace DesignPattern
             //Interpretors interpreters = new Interpretors();
             //interpreters.Run();
 
-            Iterators iterators = new Iterators();
-            iterators.Run();
+            //Iterators iterators = new Iterators();
+            //iterators.Run();
+
+            Mediators mediators = new Mediators();
+            mediators.Run();
         }
     }
 }
