@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using Autofac;
 
-namespace DesignPattern.Mediator
+namespace DesignPattern.Mediators
 {
     public class EventBroker
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesignPattern.Mediator
+namespace DesignPattern.Mediators
 {
     public class BasicMediator
     {

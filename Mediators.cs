@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DesignPattern.Mediator;
+﻿using DesignPattern.Mediators;
 
 namespace DesignPattern
 {
-    public class Mediators
+    public class Mediatorss
     {
         public void Run()
         {
             //BasicMediator basicMediator = new BasicMediator();
             //basicMediator.Run();
 
-            EventBroker eventBroker = new EventBroker();
-            eventBroker.Run();
+            //EventBroker eventBroker = new EventBroker();
+            //eventBroker.Run();
+
+            MediatorR mediatR = new MediatorR();
+            mediatR.Run();
         }
     }
 }

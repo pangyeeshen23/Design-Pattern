@@ -71,7 +71,7 @@ namespace DesignPattern
             //Iterators iterators = new Iterators();
             //iterators.Run();
 
-            Mediators mediators = new Mediators();
+            Mediatorss mediators = new Mediatorss();
             mediators.Run();
         }
     }
