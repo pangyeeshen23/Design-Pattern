@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DesignPattern.Memento.Excersice;
 
 namespace DesignPattern.Memento
 {
     public class Excersice
     {
-        public class Token
+        public interface IPrototye<T>
+        {
+            public T DeepCopy();
+        }
+        public class Token : IPrototye<Token>
         {
             public int Value = 0;
 
@@ -16,23 +21,22 @@ namespace DesignPattern.Memento
             {
                 this.Value = value;
             }
+
+            public Token DeepCopy()
+            {
+                return new Token(Value);
+            }
         }
 
         public class Memento
         {
-            public List<int> Values { get; private set; }
-            public List<Token> Tokens { get; private set; }
-
-            public Memento(List<int> values, List<Token> tokens)
-            {
-                Values = values;
-                Tokens = tokens;
-            }
+            public List<Token> Tokens { get; } = new List<Token>();
         }
 
         public class TokenMachine
         {
             public List<Token> Tokens = new List<Token>();
+            private List<Memento> _changes = new List<Memento>();
 
             public Memento AddToken(int value)
             {
@@ -43,27 +47,18 @@ namespace DesignPattern.Memento
             public Memento AddToken(Token token)
             {
                 Tokens.Add(token);
-                List<int> values = new List<int>();
-                List<Token> tokens = new List<Token>();
-                foreach (Token t in Tokens)
+                Memento memento = new Memento();
+                foreach(Token tkn in Tokens)
                 {
-                    values.Add(t.Value);
-                    tokens.Add(t);
+                    memento.Tokens.Add(tkn.DeepCopy());
                 }
-                Memento memento = new Memento(values, tokens);
+                _changes.Add(memento);
                 return memento;
             }
 
             public void Revert(Memento m)
             {
-                if (m != null && m.Values != null)
-                {
-                    Tokens = m.Tokens;
-                    for (int i = 0; i < m.Values.Count; i++)
-                    {
-                        Tokens[i].Value = m.Values[i];
-                    }
-                }
+                this.Tokens = m.Tokens;
             }
         }
 
