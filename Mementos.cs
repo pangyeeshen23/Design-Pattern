@@ -6,8 +6,11 @@ namespace DesignPattern
     {
         public void Run()
         {
-            BasicMemento basicMemento = new BasicMemento();
-            basicMemento.Run();
+            //BasicMemento basicMemento = new BasicMemento();
+            //basicMemento.Run();
+
+            Excersice excersice = new Excersice();
+            excersice.Run();
         }
     }
 }
