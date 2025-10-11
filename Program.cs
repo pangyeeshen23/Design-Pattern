@@ -74,8 +74,11 @@ namespace DesignPattern
             //Mediatorss mediators = new Mediatorss();
             //mediators.Run();
 
-            Mementos mementos = new Mementos();
-            mementos.Run();
+            //Mementos mementos = new Mementos();
+            //mementos.Run();
+
+            NullObjects no = new NullObjects();
+            no.Run();
         }
     }
 }
