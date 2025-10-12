@@ -11,7 +11,10 @@ namespace DesignPattern
     {
         public void Run()
         {
-            NullObjectPattern.Demo.Run();
+            //NullObjectPattern.Demo.Run();
+            //NullObjSingleton.Program.Run();
+            //DynamicNullObject.Demo.Run();
+            Excersice
         }
 
     }
