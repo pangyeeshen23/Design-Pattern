@@ -77,8 +77,11 @@ namespace DesignPattern
             //Mementos mementos = new Mementos();
             //mementos.Run();
 
-            NullObjects no = new NullObjects();
-            no.Run();
+            //NullObjects no = new NullObjects();
+            //no.Run();
+
+            Observers observer = new Observers();
+            observer.Run();
         }
     }
 }

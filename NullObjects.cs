@@ -1,4 +1,5 @@
 ﻿using DesignPattern.NullObject;
+using DesignPattern.Observer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,6 @@ namespace DesignPattern
             //NullObjectPattern.Demo.Run();
             //NullObjSingleton.Program.Run();
             //DynamicNullObject.Demo.Run();
-            Excersice
         }
 
     }

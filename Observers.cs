@@ -1,0 +1,18 @@
+﻿using DesignPattern.Observer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DesignPattern
+{
+    public class Observers
+    {
+        public void Run()
+        {
+            EventObserver.Demo eventObserver = new EventObserver.Demo();
+            eventObserver.Run();
+        }
+    }
+}
