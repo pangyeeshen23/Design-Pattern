@@ -13,9 +13,11 @@ namespace DesignPattern
         {
             //EventObserver.Demo eventObserver = new EventObserver.Demo();
             //eventObserver.Run();
-            
-            WeakEventPattern weakEvent = new WeakEventPattern();
-            weakEvent.Run();
+
+            //WeakEventPattern weakEvent = new WeakEventPattern();
+            //weakEvent.Run();
+
+            SpecialInterface.Program.Run();
         }
     }
 }
