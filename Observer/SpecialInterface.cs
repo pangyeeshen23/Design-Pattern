@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -63,8 +64,9 @@ namespace DesignPattern.Observer
             public Program()
             {
                 Person person = new Person();
-                using IDisposable sub = person.Subscribe(this);
-
+                //IDisposable sub = person.Subscribe(this);
+                person.OfType<FallIllsEvent>()
+                    .Subscribe(args => Console.WriteLine($"A doctor is required at {args.Address}"));
                 person.FallsIll();
             }
 
