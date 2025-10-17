@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DesignPattern.Observer.EventObserver;
 
 namespace DesignPattern
 {
@@ -17,7 +18,11 @@ namespace DesignPattern
             //WeakEventPattern weakEvent = new WeakEventPattern();
             //weakEvent.Run();
 
-            SpecialInterface.Program.Run();
+            //SpecialInterface.Program.Run();
+
+            //MarketObserver.Program.Run();
+            
+            BidirectionalObserver.Run();
         }
     }
 }
