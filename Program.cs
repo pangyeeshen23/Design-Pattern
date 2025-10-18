@@ -1,5 +1,6 @@
 ﻿using DesignPattern.Command;
 using DesignPattern.Interpreter;
+using DesignPattern.Observer;
 using DesignPattern.Proxy;
 
 namespace DesignPattern
@@ -82,6 +83,7 @@ namespace DesignPattern
 
             Observers observer = new Observers();
             observer.Run();
+
         }
     }
 }

@@ -21,8 +21,12 @@ namespace DesignPattern
             //SpecialInterface.Program.Run();
 
             //MarketObserver.Program.Run();
-            
-            BidirectionalObserver.Run();
+
+            //BidirectionalObserver.Run();
+
+            //PropertyDependencies.Run();
+
+            EventSubscriptions.Program.Run();
         }
     }
 }
