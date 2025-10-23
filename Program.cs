@@ -81,8 +81,10 @@ namespace DesignPattern
             //NullObjects no = new NullObjects();
             //no.Run();
 
-            Observers observer = new Observers();
-            observer.Run();
+            //Observers observer = new Observers();
+            //observer.Run();
+
+            States.Run();
 
         }
     }

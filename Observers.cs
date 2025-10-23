@@ -28,7 +28,7 @@ namespace DesignPattern
 
             //EventSubscriptions.Program.Run();
 
-            Exercise.Program.Run();
+            //Exercise.Program.Run();
         }
     }
 }
