@@ -11,8 +11,10 @@ namespace DesignPattern
     {
         public static void Run()
         {
-            ClassicImplementation classic = new ClassicImplementation();
-            classic.Run();
+            //ClassicImplementation classic = new ClassicImplementation();
+            //classic.Run();
+
+            StateMachine.Run();
         }
     }
 }
