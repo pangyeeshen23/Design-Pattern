@@ -14,7 +14,13 @@ namespace DesignPattern
             //ClassicImplementation classic = new ClassicImplementation();
             //classic.Run();
 
-            StateMachine.Run();
+            //StateMachine.Run();
+
+            //SwitchBaseStateMachine.Run();
+
+            //SwitchExpression.Run();
+
+            StatelessMachine.Run();
         }
     }
 }

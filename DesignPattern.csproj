@@ -26,6 +26,7 @@
     <PackageReference Include="JetBrains.dotMemoryUnit" Version="3.2.20220510" />
     <PackageReference Include="MediatR" Version="13.0.0" />
     <PackageReference Include="morelinq" Version="4.4.0" />
+    <PackageReference Include="Stateless" Version="5.20.0" />
     <PackageReference Include="System.Reactive" Version="6.0.2" />
   </ItemGroup>
 
