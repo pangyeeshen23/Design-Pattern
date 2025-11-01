@@ -20,7 +20,9 @@ namespace DesignPattern
 
             //SwitchExpression.Run();
 
-            StatelessMachine.Run();
+            //StatelessMachine.Run();
+
+            Excersice.Run();
         }
     }
 }

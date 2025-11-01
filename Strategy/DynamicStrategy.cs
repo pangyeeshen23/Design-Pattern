@@ -1,0 +1,108 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DesignPattern.Strategy
+{
+    public enum OutputFormat
+    {
+        Markdown,
+        Html
+    }
+
+    public interface IListStrategy
+    {
+        void Start(StringBuilder sb);
+        void End(StringBuilder sb);
+        void AddListItem(StringBuilder sb, string item);
+
+    }
+
+    public class HtmlListStrategy : IListStrategy
+    {
+        public void AddListItem(StringBuilder sb, string item)
+        {
+            sb.AppendLine($" <li>{item}</li>");
+        }
+
+        public void End(StringBuilder sb)
+        {
+            sb.AppendLine("</ul>");
+        }
+
+        public void Start(StringBuilder sb)
+        {
+            sb.AppendLine("<ul>");
+        }
+    }
+
+    public class MarkdownListStrategy : IListStrategy
+    {
+        public void AddListItem(StringBuilder sb, string item)
+        {
+            sb.AppendLine($" * {item}");
+        }
+
+        public void End(StringBuilder sb)
+        {
+
+        }
+
+        public void Start(StringBuilder sb)
+        {
+
+        }
+    }
+
+    public class TextProcessor
+    {
+        private StringBuilder sb = new StringBuilder();
+        private IListStrategy listStrat;
+
+        public void SetOutputFormat(OutputFormat format)
+        {
+            switch (format)
+            {
+                case OutputFormat.Markdown:
+                    listStrat = new MarkdownListStrategy();
+                    break;
+                case OutputFormat.Html:
+                    listStrat = new HtmlListStrategy();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
+            }
+        }
+
+        public void AppendList(IEnumerable<string> items)
+        {
+            listStrat.Start(sb);
+            foreach (var item in items)
+            {
+                listStrat.AddListItem(sb, item);
+            }
+            listStrat.End(sb);
+        }
+
+        public override string ToString()
+        {
+            return sb.ToString();
+        }
+
+        public StringBuilder Clear()
+        {
+            return sb.Clear();
+        }
+
+        public static void Run()
+        {
+            TextProcessor processor = new TextProcessor();
+            processor.SetOutputFormat(OutputFormat.Html);
+            processor.AppendList(new[] {"foo", "bar", "baz"});
+            Console.WriteLine(processor);
+        }
+    }
+}
+

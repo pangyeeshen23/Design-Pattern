@@ -84,7 +84,9 @@ namespace DesignPattern
             //Observers observer = new Observers();
             //observer.Run();
 
-            States.Run();
+            //States.Run();
+
+            Strategies.Run();
 
         }
     }
