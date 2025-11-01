@@ -31,7 +31,14 @@ namespace DesignPattern.State
         {
             var machine = new StateMachine<Health, Activity>(Health.NonReporductive);
             machine.Configure(Health.NonReporductive)
-                .Permit(Activity.ReachPuberty, Health.Reproductive);
+                .Permit(Activity.ReachPuberty, Health.Reproductive)
+                .OnActivateAsync(() =>
+                {
+                    return Task.Run(() =>
+                    {
+                        Console.WriteLine("You have reached puberty!");
+                    });
+                }, "Reach Puberty");
             machine.Configure(Health.Reproductive)
                 .Permit(Activity.Historectomy, Health.NonReporductive)
                 .PermitIf(Activity.HaveUnprotectedSex, Health.Pregnant, () => ParentsNotWacthing);
