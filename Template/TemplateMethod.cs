@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Template
 {
+
+    // Template Design Pattern
     public static class TemplateMethod
     {
         public abstract class Game

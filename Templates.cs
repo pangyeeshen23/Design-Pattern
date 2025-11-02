@@ -6,7 +6,9 @@ namespace DesignPattern
     {
         public static void Run()
         {
-            TemplateMethod.Run();
+            //TemplateMethod.Run();
+
+            GameTemplate.Run();
         }
     }
 }
