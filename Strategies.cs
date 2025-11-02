@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DesignPattern.Strategy.EqualityNComparison;
 
 namespace DesignPattern
 {
@@ -11,7 +12,7 @@ namespace DesignPattern
     {
         public static void Run()
         {
-            TextProcessor.Run();
+            Comparisor.Run();
         }
     }
 }

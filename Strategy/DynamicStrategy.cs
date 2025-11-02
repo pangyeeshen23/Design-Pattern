@@ -18,6 +18,8 @@ namespace DesignPattern.Strategy
         void End(StringBuilder sb);
         void AddListItem(StringBuilder sb, string item);
 
+        // static strategy
+        
     }
 
     public class HtmlListStrategy : IListStrategy
@@ -56,25 +58,25 @@ namespace DesignPattern.Strategy
         }
     }
 
-    public class TextProcessor
+    public class TextProcessor<LS> where LS : IListStrategy, new()
     {
         private StringBuilder sb = new StringBuilder();
-        private IListStrategy listStrat;
+        private IListStrategy listStrat = new LS();
 
-        public void SetOutputFormat(OutputFormat format)
-        {
-            switch (format)
-            {
-                case OutputFormat.Markdown:
-                    listStrat = new MarkdownListStrategy();
-                    break;
-                case OutputFormat.Html:
-                    listStrat = new HtmlListStrategy();
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(format), format, null);
-            }
-        }
+        //public void SetOutputFormat(OutputFormat format)
+        //{
+        //    switch (format)
+        //    {
+        //        case OutputFormat.Markdown:
+        //            listStrat = new MarkdownListStrategy();
+        //            break;
+        //        case OutputFormat.Html:
+        //            listStrat = new HtmlListStrategy();
+        //            break;
+        //        default:
+        //            throw new ArgumentOutOfRangeException(nameof(format), format, null);
+        //    }
+        //}
 
         public void AppendList(IEnumerable<string> items)
         {
@@ -96,12 +98,26 @@ namespace DesignPattern.Strategy
             return sb.Clear();
         }
 
+    }
+
+    public static class DynamicNStaticStrategy
+    {
         public static void Run()
         {
-            TextProcessor processor = new TextProcessor();
-            processor.SetOutputFormat(OutputFormat.Html);
-            processor.AppendList(new[] {"foo", "bar", "baz"});
-            Console.WriteLine(processor);
+            //Dynamic Strategy Pattern
+            //TextProcessor processor = new TextProcessor();
+            //processor.SetOutputFormat(OutputFormat.Html);
+            //processor.AppendList(new[] {"foo", "bar", "baz"});
+            //Console.WriteLine(processor);
+
+            // Static Strategy Pattern
+            TextProcessor<MarkdownListStrategy> text = new TextProcessor<MarkdownListStrategy>();
+            text.AppendList(new[] { "foo", "bar", "baz" });
+            Console.WriteLine(text);
+
+            TextProcessor<HtmlListStrategy> htmlText = new TextProcessor<HtmlListStrategy>();
+            htmlText.AppendList(new[] { "foo", "bar", "baz" });
+            Console.WriteLine(htmlText);
         }
     }
 }
