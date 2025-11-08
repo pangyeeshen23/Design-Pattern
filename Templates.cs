@@ -8,7 +8,9 @@ namespace DesignPattern
         {
             //TemplateMethod.Run();
 
-            GameTemplate.Run();
+            //GameTemplate.Run();
+
+            Excersice.Run();
         }
     }
 }
