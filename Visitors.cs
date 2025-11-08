@@ -13,7 +13,9 @@ namespace DesignPattern
         {
             //IntrusiveVisitor.Run();
 
-            ReflectiveVisitor.Run();
+            //ReflectiveVisitor.Run();
+
+            ClassicVisitor.Run();
         }
     }
 }
