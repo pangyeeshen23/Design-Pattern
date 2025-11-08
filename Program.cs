@@ -88,7 +88,9 @@ namespace DesignPattern
 
             //Strategies.Run();
 
-            Templates.Run();
+            //Templates.Run();
+
+            Visitors.Run();
         }
     }
 }
