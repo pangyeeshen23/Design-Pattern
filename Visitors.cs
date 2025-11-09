@@ -15,7 +15,9 @@ namespace DesignPattern
 
             //ReflectiveVisitor.Run();
 
-            ClassicVisitor.Run();
+            //ClassicVisitor.Run();
+
+            ReductionAndTransform.Run();
         }
     }
 }
