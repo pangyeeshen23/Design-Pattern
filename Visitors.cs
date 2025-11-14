@@ -19,7 +19,9 @@ namespace DesignPattern
 
             //ReductionAndTransform.Run();
 
-            DynamicVisitor.Run();
+            //DynamicVisitor.Run();
+
+            VisitorBuilders.Run();
         }
     }
 }
