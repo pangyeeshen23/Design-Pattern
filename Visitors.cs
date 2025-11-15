@@ -21,7 +21,9 @@ namespace DesignPattern
 
             //DynamicVisitor.Run();
 
-            VisitorBuilders.Run();
+            //VisitorBuilders.Run();
+
+            Excersice.Run();
         }
     }
 }
