@@ -1,4 +1,5 @@
-﻿using DesignPattern.Command;
+﻿using DesignPattern.Additionals;
+using DesignPattern.Command;
 using DesignPattern.Interpreter;
 using DesignPattern.Observer;
 using DesignPattern.Proxy;
@@ -90,7 +91,11 @@ namespace DesignPattern
 
             //Templates.Run();
 
-            Visitors.Run();
+            //Visitors.Run();
+
+            //DuckTypingMixins.Run();
+
+            ASIISTR.Run();
         }
     }
 }
