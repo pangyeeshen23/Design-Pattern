@@ -3,6 +3,7 @@ using DesignPattern.Command;
 using DesignPattern.Interpreter;
 using DesignPattern.Observer;
 using DesignPattern.Proxy;
+using static DesignPattern.Additionals.ContinuationPassing;
 
 namespace DesignPattern
 {
@@ -95,7 +96,11 @@ namespace DesignPattern
 
             //DuckTypingMixins.Run();
 
-            ASIISTR.Run();
+            //ASIISTR.Run();
+
+            //ContinuationPassingStyleDemo.Run();
+
+            //DuckTypingMixins.Run();
         }
     }
 }

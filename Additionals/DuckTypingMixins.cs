@@ -54,7 +54,7 @@ namespace DesignPattern.Additionals
     //    }
     //}
 
-    public class DuckTypingMixins
+    public static class DuckTypingMixins
     {
         public static void Run()
         {
