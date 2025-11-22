@@ -101,6 +101,8 @@ namespace DesignPattern
             //ContinuationPassingStyleDemo.Run();
 
             //DuckTypingMixins.Run();
+
+            CQRS.Execute();
         }
     }
 }
