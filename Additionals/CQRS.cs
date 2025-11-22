@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesignPattern.Additionals
 {
-    public class DIContainer
+    public class CQRS
     {
 
 
