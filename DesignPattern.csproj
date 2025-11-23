@@ -8,12 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="F#\**" />
     <Compile Remove="packages\**" />
     <Compile Remove="Tests\**" />
     <Compile Remove="Test\**" />
+    <EmbeddedResource Remove="F#\**" />
     <EmbeddedResource Remove="packages\**" />
     <EmbeddedResource Remove="Tests\**" />
     <EmbeddedResource Remove="Test\**" />
+    <None Remove="F#\**" />
     <None Remove="packages\**" />
     <None Remove="Tests\**" />
     <None Remove="Test\**" />
